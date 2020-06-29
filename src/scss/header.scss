@@ -1,0 +1,19 @@
+.navbar{
+  background-color: $secondary_color;
+
+}
+
+.navbar-brand{
+  //background-color: $primary_color;
+}
+
+.logo{
+  color: $primary_color;
+  font-weight: bold;
+  font-size: 30px;
+
+  &__app{
+    color: darken($primary_color, 20%)
+  }
+}
+

@@ -1,10 +1,24 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {BookList} from "./components/books/BookList";
 import './scss/main.scss';
+import {Header} from "./components/Header";
+
+class Test extends Component {
+    render() {
+        return (
+            <>
+                <Header />
+
+
+
+
+            </>
+        )
+    }
+}
 
 
 ReactDOM.render(
-    <BookList/>,
+    <Test/>,
     document.getElementById('app')
 )
