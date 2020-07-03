@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from "react";
 
 export const Header = () =>{
 
@@ -6,7 +6,7 @@ export const Header = () =>{
     return (
         <header>
 
-            <nav className="navbar navbar-expand-sm navbar-light bg-light">
+            <nav className="navbar navbar-expand-sm">
                 <a href={'#'} className={'navbar-brand m-1 logo__app'}><i className="logo m-1 fas fa-clipboard-check"/><strong className={'logo'}>QUIZ</strong>app</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
                         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

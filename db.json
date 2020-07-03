@@ -1,0 +1,114 @@
+{
+  "items":[
+    {
+      "id":1,
+      "question": "Bracia Golec gdy widzą słodycze to",
+      "subject_ID": 1,
+      "answers":[
+        {
+          "id":101,
+          "text":"Krzyczą",
+          "correct":false
+        },
+        {
+          "id":102,
+          "text":"Kwiczą",
+          "correct":true
+        },
+        {
+          "id":103,
+          "text":"Kotwiczą",
+          "correct":false
+        }
+      ]
+    },
+    {
+      "id":2,
+      "question": "Landrynki są",
+      "subject_ID": 1,
+      "answers":[
+        {
+          "id":201,
+          "text":"Twarde",
+          "correct":true
+        },
+        {
+          "id":202,
+          "text":"Miękkie",
+          "correct":false
+        },
+        {
+          "id":203,
+          "text":"Kruche",
+          "correct":false
+        }
+      ]
+    },
+    {
+      "id":3,
+      "question": "Oryginalny skład krówek to",
+      "subject_ID": 1,
+      "answers":[
+        {
+          "id":301,
+          "text":"Ciastko, karmel, czekolada",
+          "correct":false
+        },
+        {
+          "id":302,
+          "text":"Mleko, cukier, masło",
+          "correct":true
+        },
+        {
+          "id":303,
+          "text":"Jajko, proszek do pieczenia, cukier",
+          "correct":false
+        }
+      ]
+    },
+    {
+      "id":4,
+      "question": "Polską stolicą piernika jest:",
+      "subject_ID": 1,
+      "answers":[
+        {
+          "id":401,
+          "text":"Bydgoszcz",
+          "correct":false
+        },
+        {
+          "id":402,
+          "text":"Opole",
+          "correct":false
+        },
+        {
+          "id":403,
+          "text":"Toruń",
+          "correct":true
+        }
+      ]
+    },
+    {
+      "id":5,
+      "question": "Ciasto mazurek powinno być",
+      "subject_ID": 1,
+      "answers":[
+        {
+          "id":501,
+          "text":"Niskie",
+          "correct":true
+        },
+        {
+          "id":502,
+          "text":"Wysokie",
+          "correct":false
+        },
+        {
+          "id":503,
+          "text":"Skośne",
+          "correct":false
+        }
+      ]
+    }
+  ]
+}
