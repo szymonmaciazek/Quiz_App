@@ -1,39 +1,58 @@
 {
-  "items":[
+  "items": [
     {
-      "id":1,
+      "id": 1,
       "question": "Bracia Golec gdy widzą słodycze to",
       "subject_ID": 1,
-      "answers":["krzycza", "kwicza", "kotwicza"],
+      "answers": [
+        "krzycza",
+        "kwicza",
+        "kotwicza"
+      ],
       "correct": "kwicza"
     },
     {
-      "id":2,
+      "id": 2,
       "question": "Landrynki są",
       "subject_ID": 1,
-      "answers":["Twarde", "Miękkie", "Kruche"],
+      "answers": [
+        "Twarde",
+        "Miękkie",
+        "Kruche"
+      ],
       "correct": "Twarde"
     },
     {
-      "id":3,
+      "id": 3,
       "question": "Oryginalny skład krówek to",
       "subject_ID": 1,
-      "answers":["Ciastko, karmel, czekolada", "Mleko, cukier, masło", "Jajko, proszek do pieczenia, cukier"],
+      "answers": [
+        "Ciastko, karmel, czekolada",
+        "Mleko, cukier, masło",
+        "Jajko, proszek do pieczenia, cukier"
+      ],
       "correct": "Mleko, cukier, masło"
     },
     {
-      "id":4,
+      "id": 4,
       "question": "Polską stolicą piernika jest:",
       "subject_ID": 1,
-      "answers":["Bydgoszcz", "Opole", "Toruń"],
+      "answers": [
+        "Bydgoszcz",
+        "Opole",
+        "Toruń"
+      ],
       "correct": "Toruń"
     },
     {
-      "id":5,
+      "id": 5,
       "question": "Ciasto mazurek powinno być",
       "subject_ID": 1,
-      "answers":["Niskie", "Wysokie", "Skośne"],
-      "correct": "Niskie"
+      "answers": [
+        "Niskie",
+        "Wysokie",
+        "Skośne"
+      ]
     }
   ]
 }

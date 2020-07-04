@@ -1,5 +1,6 @@
 import React, {Component, useEffect, useState} from "react";
 import {QuizResult} from "./QuizResult";
+import {Header} from "./Header";
 
 export const StartQuiz = () =>{
     const [question, setQuestion] = useState("")
@@ -13,6 +14,8 @@ export const StartQuiz = () =>{
     const [correctValue, setCorrectValue] = useState('')
     const [quizData, setQuizData] = useState(0)
     const [quizLenght, setQuizLenght]= useState(0)
+    const [subject, setSubject] = useState(1)
+    const [answers, setAnswers] = useState([])
 
 
     const server = "http://localhost:3000";
@@ -23,9 +26,7 @@ export const StartQuiz = () =>{
             .then(response => response.json())
             .then(data => {
                 setQuestion(data.items[quizData].question)
-                setOption1(data.items[quizData].answers[0])
-                setOption2(data.items[quizData].answers[1])
-                setOption3(data.items[quizData].answers[2])
+                setAnswers(data.items[quizData].answers)
                 setCorrectValue(data.items[quizData].correct)
                 setQuizLenght(data.items.length)
 
@@ -40,9 +41,7 @@ export const StartQuiz = () =>{
 
     const getCorrect = (e) =>{
         e.preventDefault()
-        // console.log(e.target.value.text);
         setCurrentAnswer(e.target.innerText)
-        console.log(e.target.innerText);
         setQuizData(prev => prev + 1)
     }
 
@@ -56,10 +55,6 @@ export const StartQuiz = () =>{
         }
     }, [currentAnswer])
 
-    // useEffect(() =>{
-    //     setQuizData(prev => prev + 1)
-    // }, [quizData])
-
     const getNextQuestion = () =>{
         fetch(`${server}/db`, {
             method: 'GET'
@@ -67,9 +62,8 @@ export const StartQuiz = () =>{
             .then(response => response.json())
             .then(data => {
                 setQuestion(data.items[quizData].question)
-                setOption1(data.items[quizData].answers[0])
-                setOption2(data.items[quizData].answers[1])
-                setOption3(data.items[quizData].answers[2])
+                setAnswers(data.items[quizData].answers)
+
                 setCorrectValue(data.items[quizData].correct)
 
 
@@ -83,16 +77,17 @@ export const StartQuiz = () =>{
         getNextQuestion()
     }, [quizData])
 
-    if(quizData === quizLenght) return <QuizResult lenght={quizLenght} points={userPoints} />
+    if(quizData === quizLenght) return <QuizResult lenght={quizLenght} points={userPoints - 1} />
 
     return (
         <>
+            <Header />
             <div>
                 <h1>{question}</h1>
                 <div>
-                    <button onClick={getCorrect}>{option1}</button>
-                    <button onClick={getCorrect}>{option2}</button>
-                    <button onClick={getCorrect}>{option3}</button>
+                    <ul>
+                        {answers.map((element,index) => <li onClick={getCorrect} key={index}>{element}</li>)}
+                    </ul>
 
                 </div>
             </div>

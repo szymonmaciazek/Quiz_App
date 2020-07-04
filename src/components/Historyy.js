@@ -1,12 +1,12 @@
 import React, {Component, useEffect, useState} from "react";
 import {Header} from "./Header";
 
-export const Contact = () =>{
+export const Historyy = () =>{
 
     return (
         <>
             <Header />
-            <h1>KONTAKT</h1>
+            <h1>HISTORIA</h1>
         </>
     )
 }
