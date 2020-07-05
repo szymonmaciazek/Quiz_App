@@ -1,6 +1,6 @@
 import React, {Component, useEffect, useState} from "react";
 import {Header} from "./Header";
-import {Errors} from "./Errors";
+
 
 
 export const AddQuiz = () =>{
@@ -61,10 +61,10 @@ export const AddQuiz = () =>{
 
         const newErrors = [];
         if(questionObject.question.length<3){newErrors.push("Pytanie musi zawierać minimum 3 znaki")}
-        if(questionObject.answers[0].length<=0){newErrors.push("Odpowiedź musi zawierać minimum 1")}
-        if(questionObject.answers[1].length<=0){newErrors.push("Odpowiedź musi zawierać minimum 1")}
-        if(questionObject.answers[2].length<=0){newErrors.push("Odpowiedź musi zawierać minimum 1")}
-        if(questionObject.correct.length<=0){newErrors.push("Poprawna odpowiedź musi zawierać minimum 1")}
+        if(questionObject.answers[0].length<=0){newErrors.push("Odpowiedź 1 musi zawierać minimum 1 znak")}
+        if(questionObject.answers[1].length<=0){newErrors.push("Odpowiedź 2 musi zawierać minimum 1 znak")}
+        if(questionObject.answers[2].length<=0){newErrors.push("Odpowiedź 3 musi zawierać minimum 1 znak")}
+        if(questionObject.correct.length<=0){newErrors.push("Wybierz poprawną odpowiedź")}
         setWarning(newErrors)
         if(newErrors.length>0)return false
 
@@ -104,17 +104,26 @@ export const AddQuiz = () =>{
 
             <Header />
 
-            <h1>DODAJ QUIZ</h1>
-            <form onSubmit={sendForm}>
-                <label>Treść pytania<input id={'pytanie'} value={newQuestion} name="question" type="text" onChange={handleQuestionData}/></label>
-                <label>Treść odpowiedzi 1<input value={newAnswer1} name="answer" type="text" onChange={handleAnswerData1}/></label>
-                <label>Treść odpowiedzi 2<input value={newAnswer2} name="answer" type="text" onChange={handleAnswerData2}/></label>
-                <label>Treść odpowiedzi 3<input value={newAnswer3} name="answer" type="text" onChange={handleAnswerData3}/></label>
-                <label>Poprawna odpowiedz<input value={correctAnswer} name="correct" type="text" onChange={handleCorrectData}/></label>
+            <h1 className={'text-center'}>Dodaj pytanie</h1>
+            <form onSubmit={sendForm} className={'d-flex justify-content-center form-group container'}>
+                <div id={'label-container'} className={'d-flex flex-column text-center shadow'}>
+                <label>Treść pytania<input id={'pytanie'} className={'col-12 col-md-8 form-control add-input text-center'} value={newQuestion} name="question" type="text" onChange={handleQuestionData}/></label>
+                <label>Treść odpowiedzi 1<input id={'input'} className={'col-12 col-md-8 form-control add-input'} value={newAnswer1} name="answer" type="text" onChange={handleAnswerData1}/></label>
+                <label>Treść odpowiedzi 2<input id={'input'} className={'col-12 col-md-8  form-control add-input'} value={newAnswer2} name="answer" type="text" onChange={handleAnswerData2}/></label>
+                <label>Treść odpowiedzi 3<input id={'input'} className={'col-12 col-md-8 form-control add-input'} value={newAnswer3} name="answer" type="text" onChange={handleAnswerData3}/></label>
+                <label>Poprawna odpowiedz<select id={'input'} className={'col-12 col-md-8 form-control add-input'} value="" name="correct" onChange={handleCorrectData}>
+                        <option></option>
+                        <option>{newAnswer1}</option>
+                        <option>{newAnswer2}</option>
+                        <option>{newAnswer3}</option>
+                </select></label>
 
-                <button>Zatwierdz</button>
+                <button className={'mb-2 btn button align-self-center'}>Dodaj</button>
+                    {warning.length > 0 && <ul className={'p-1'}> {warning.map( (err, index) => <li id={'warning'} className=" container list-group-item list-group-item-warning " key={index}>
+                        <i className="fas fa-exclamation"></i>  {err}</li>)} </ul>}
+                </div>
             </form>
-            {warning.length > 0 && <ul> {warning.map( (err, index) => <li key={index}>{err}</li>)} </ul>}
+
         </>
     )
 }

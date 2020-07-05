@@ -2,6 +2,8 @@ import React, {Component, useEffect, useState} from "react";
 import {QuizResult} from "./QuizResult";
 import {Header} from "./Header";
 
+const games = []
+
 export const StartQuiz = () =>{
     const [question, setQuestion] = useState("")
     const [option1, setOption1] = useState("")
@@ -14,8 +16,9 @@ export const StartQuiz = () =>{
     const [correctValue, setCorrectValue] = useState('')
     const [quizData, setQuizData] = useState(0)
     const [quizLenght, setQuizLenght]= useState(0)
-    const [subject, setSubject] = useState(1)
     const [answers, setAnswers] = useState([])
+    const [isDone, setIsDone] = useState(false)
+
 
 
     const server = "http://localhost:3000";
@@ -77,16 +80,37 @@ export const StartQuiz = () =>{
         getNextQuestion()
     }, [quizData])
 
-    if(quizData === quizLenght) return <QuizResult lenght={quizLenght} points={userPoints - 1} />
-
+    //
+    // const save = () => {
+    //
+    //     const game = {
+    //         points: userPoints,
+    //         lenght: quizLenght
+    //     }
+    //     localStorage.setItem("game", JSON.stringify(game));
+    //
+    //     games.push(game);
+    //     localStorage.setItem("games", JSON.stringify(games));
+    //
+    // }
+    //
+    //
+    // // useEffect(()=>{
+    // //     save()
+    // // },[])
+    //
+    // // if(quizData === quizLenght) { setIsDone(true)}
+    if(quizData === quizLenght) {
+        return <QuizResult lenght={quizLenght} points={userPoints - 1}/>
+    }
     return (
         <>
             <Header />
             <div>
-                <h1>{question}</h1>
-                <div>
-                    <ul>
-                        {answers.map((element,index) => <li onClick={getCorrect} key={index}>{element}</li>)}
+                <h1 className={'h2 text-center p-3 col-12'}>{question}</h1>
+                <div id={'label-container'} className={'d-flex flex-column text-center m-auto col-md-8 col-12 shadow'}>
+                    <ul className={'list-unstyled list-group'}>
+                        {answers.map((element,index) => <li className={' h4 list-group-item list-group-item-action'} onClick={getCorrect} key={index}>{element}</li>)}
                     </ul>
 
                 </div>

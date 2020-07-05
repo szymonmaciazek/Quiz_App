@@ -1,0 +1,49 @@
+
+#label-container{
+  width: 900px;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  padding: 20px;
+
+}
+
+.button{
+  background-color: $primary_color;
+  //width: 140px;
+  padding: 20px 60px;
+  margin-top: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 1px 1px 7px 0px rgba(219,187,147,1);
+  -moz-box-shadow: 1px 1px 7px 0px rgba(219,187,147,1);
+  box-shadow: 1px 1px 8px 0px rgba(219,187,147,1);
+}
+
+.fas{
+  font-size: 20px;
+}
+
+
+#warning{
+  border-radius: 20px;
+  margin-bottom:  10px;
+}
+
+#input{
+
+  -webkit-box-shadow: 1px 1px 7px 0px rgba(219,187,147,1);
+  -moz-box-shadow: 1px 1px 7px 0px rgba(219,187,147,1);
+  box-shadow: 1px 1px 7px 0px rgba(219,187,147,1);
+  margin: 0 auto
+}
+
+#pytanie{
+  -webkit-box-shadow: 1px 1px 7px 0px rgba(219,187,147,1);
+  -moz-box-shadow: 1px 1px 7px 0px rgba(219,187,147,1);
+  box-shadow: 1px 1px 7px 0px rgba(219,187,147,1);
+  margin: 0 auto;
+}
+
+@media (max-width: 768px){
+
+
+}

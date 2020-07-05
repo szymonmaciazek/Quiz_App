@@ -5,11 +5,11 @@
       "question": "Bracia Golec gdy widzą słodycze to",
       "subject_ID": 1,
       "answers": [
-        "krzycza",
-        "kwicza",
-        "kotwicza"
+        "krzyczą",
+        "kwiczą",
+        "kotwiczą"
       ],
-      "correct": "kwicza"
+      "correct": "kwiczą"
     },
     {
       "id": 2,
@@ -52,7 +52,8 @@
         "Niskie",
         "Wysokie",
         "Skośne"
-      ]
+      ],
+      "correct": "Niskie"
     }
   ]
 }

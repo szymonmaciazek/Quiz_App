@@ -1,11 +1,12 @@
+.container{
+  max-width: 1000px;
+}
+
 .navbar{
   background-color: $secondary_color;
 
 }
 
-.navbar-brand{
-  //background-color: $primary_color;
-}
 
 .logo{
   color: $primary_color;
@@ -13,11 +14,59 @@
   font-size: 30px;
 
   &__app{
-    color: darken($primary_color, 20%)
+    color: darken($primary_color, 20%);
+    text-decoration: none;
   }
 }
 
-.nav-link{
-  color: $primary_color;
-  font-weight: bold;
+#check {
+  font-size: 40px;
 }
+
+
+
+.fa-bars{
+  color: $primary_color;
+  font-size: 30px;
+}
+
+.navbar-nav{
+  .navigation{
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding: 0;
+    margin: 0.5px;
+    border: none;
+
+    &:hover{
+      background-color: darken(whitesmoke, 10%);
+      border: none;
+    }
+
+    .nav-link{
+      color: $primary_color;
+      font-weight: bold;
+      padding: 15px 25px;
+    }
+    @media (max-width: 880px) {
+      .nav-link{
+        padding: 10px 15px;
+      }
+
+    }
+    @media (max-width: 790px) {
+      .nav-link{
+        padding: 10px;
+        text-align: center;
+        font-size: 0.8em;
+      }
+      #check{
+        font-size: 30px;
+      }
+      .logo{
+        font-size: 20px;
+      }
+    }
+  }
+}
+

@@ -12,9 +12,10 @@ import {
 } from 'react-router-dom';
 import {StartQuiz} from "./components/StartQuiz";
 import {AddQuiz} from "./components/AddQuiz";
-import {Contact} from "./components/Contact";
+import {Login} from "./components/Login";
 import {Historyy} from "./components/Historyy";
 import {Home} from "./components/Home";
+import {QuizResult} from "./components/QuizResult";
 
 
 const App = () => {
@@ -25,7 +26,7 @@ const App = () => {
                 <Route  path='/startquiz' component={StartQuiz}/>
                 <Route  path='/addquiz' component={AddQuiz}/>
                 <Route  path='/history' component={Historyy}/>
-                <Route  path='/contact' component={Contact}/>
+                <Route  path='/contact' component={Login}/>
 
             </>
         </HashRouter>
