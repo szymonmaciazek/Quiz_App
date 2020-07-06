@@ -101,7 +101,7 @@ export const AddQuiz = () =>{
 
             <Header />
 
-            <h1 className={'text-center'}>Dodaj pytanie</h1>
+            <h2 className={'text-center p-1 h1'}>Dodaj pytanie</h2>
             <form onSubmit={sendForm} className={'d-flex justify-content-center form-group container'}>
                 <div id={'label-container'} className={'d-flex flex-column text-center shadow'}>
                 <label>Treść pytania<input id={'pytanie'} className={'col-12 col-md-8 form-control add-input text-center'} value={newQuestion} name="question" type="text" onChange={handleQuestionData}/></label>

@@ -30,8 +30,7 @@ export const Header = ({userName}) =>{
                                 Quiz</Link></li>
                             <li className="nav-item list-group-item navigation"><Link to={'/history'} className="nav-link" href="#">Historia</Link>
                             </li>
-                            <li className="nav-item list-group-item navigation"><Link to={'/login'} className="nav-link" href="#"><span id="test1" className="app__user-name">{localStorage.getItem('userLogin')}</span>
-                                <i className=" app__user-avatar far fa-user-circle" /></Link>
+                            <li className="nav-item list-group-item navigation"><Link to={'/login'} className="nav-link" href="#"><span id="test1" className="app__user-name">{localStorage.getItem('userLogin')}</span></Link>
                             </li>
                         </ul>
 

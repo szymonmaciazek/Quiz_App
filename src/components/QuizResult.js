@@ -28,8 +28,14 @@ export const QuizResult = ({points, length}) =>{
     return (
         <>
             <Header />
+
+            <div id={'login-container'} className={'d-flex flex-column text-center col-md-8 col-12 shadow'}>
+
+
             <h1>{`Zdobyłeś ${points}/${length}`}</h1>
             <button disabled={disabledButton} onClick={handleSave}>Zapisz</button>
+
+            </div>
         </>
     )
 }
