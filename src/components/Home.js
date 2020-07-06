@@ -18,7 +18,8 @@ export const Home = () =>{
                         <strong className={'m-2'}>Version 1.0.0</strong>
                         <ul className={'list-group col-md-7 col-12 m-auto'}>
                             <li className={'list-group-item mb-2 shadow'}><small>Dodano możliwość rozwiązywania quizu</small></li>
-                            <li className={'list-group-item shadow'}><small>Dodano możliwość tworzenia pytań</small></li>
+                            <li className={'list-group-item mb-2 shadow'}><small>Dodano możliwość tworzenia pytań</small></li>
+                            <li className={'list-group-item mb-2 shadow'}><small>Dodano historię wyników</small></li>
                         </ul>
                     </div>
                     <Link to={'/startquiz'} className={'mb-2 btn button align-self-center shadow'} href="#">Rozpocznij
