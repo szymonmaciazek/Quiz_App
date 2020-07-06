@@ -2,23 +2,14 @@ import React, {Component, useEffect, useState} from "react";
 import {QuizResult} from "./QuizResult";
 import {Header} from "./Header";
 
-const games = []
-
 export const StartQuiz = () =>{
     const [question, setQuestion] = useState("")
-    const [option1, setOption1] = useState("")
-    const [option2, setOption2] = useState("")
-    const [option3, setOption3] = useState("")
-
-    const [choice, setChoice] = useState("")
     const [userPoints, setUserPoints] = useState( 0)
     const [currentAnswer, setCurrentAnswer] =useState('')
     const [correctValue, setCorrectValue] = useState('')
     const [quizData, setQuizData] = useState(0)
-    const [quizLenght, setQuizLenght]= useState(0)
-    const [answers, setAnswers] = useState([])
-    const [isDone, setIsDone] = useState(false)
-
+    const [quizLength, setQuizLength]= useState(0)
+    const [answers, setAnswers] = useState([]);
 
 
     const server = "http://localhost:3000";
@@ -31,7 +22,7 @@ export const StartQuiz = () =>{
                 setQuestion(data.items[quizData].question)
                 setAnswers(data.items[quizData].answers)
                 setCorrectValue(data.items[quizData].correct)
-                setQuizLenght(data.items.length)
+                setQuizLength(data.items.length)
 
             })
             .catch(error => {
@@ -69,7 +60,6 @@ export const StartQuiz = () =>{
 
                 setCorrectValue(data.items[quizData].correct)
 
-
             })
             .catch(error => {
                 console.log(error);
@@ -80,28 +70,8 @@ export const StartQuiz = () =>{
         getNextQuestion()
     }, [quizData])
 
-    //
-    // const save = () => {
-    //
-    //     const game = {
-    //         points: userPoints,
-    //         lenght: quizLenght
-    //     }
-    //     localStorage.setItem("game", JSON.stringify(game));
-    //
-    //     games.push(game);
-    //     localStorage.setItem("games", JSON.stringify(games));
-    //
-    // }
-    //
-    //
-    // // useEffect(()=>{
-    // //     save()
-    // // },[])
-    //
-    // // if(quizData === quizLenght) { setIsDone(true)}
-    if(quizData === quizLenght) {
-        return <QuizResult lenght={quizLenght} points={userPoints - 1}/>
+    if(quizData === quizLength) {
+        return <QuizResult length={quizLength} points={userPoints - 1}/>
     }
     return (
         <>
@@ -112,7 +82,6 @@ export const StartQuiz = () =>{
                     <ul className={'list-unstyled list-group'}>
                         {answers.map((element,index) => <li className={' h4 list-group-item list-group-item-action'} onClick={getCorrect} key={index}>{element}</li>)}
                     </ul>
-
                 </div>
             </div>
         </>

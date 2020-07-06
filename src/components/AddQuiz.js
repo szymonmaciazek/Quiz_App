@@ -2,12 +2,10 @@ import React, {Component, useEffect, useState} from "react";
 import {Header} from "./Header";
 
 
-
 export const AddQuiz = () =>{
 
     const [warning, setWarning] = useState([])
     const [newQuestion, setNewQuestion] = useState("")
-    const [newAnswers, setNewAnswers] = useState([])
     const [newAnswer1, setNewAnswer1] = useState('')
     const [newAnswer2, setNewAnswer2] = useState('')
     const [newAnswer3, setNewAnswer3] = useState('')
@@ -87,7 +85,6 @@ export const AddQuiz = () =>{
                 console.log(error);
             });
 
-
         resetForm()
     }
 
@@ -111,16 +108,16 @@ export const AddQuiz = () =>{
                 <label>Treść odpowiedzi 1<input id={'input'} className={'col-12 col-md-8 form-control add-input'} value={newAnswer1} name="answer" type="text" onChange={handleAnswerData1}/></label>
                 <label>Treść odpowiedzi 2<input id={'input'} className={'col-12 col-md-8  form-control add-input'} value={newAnswer2} name="answer" type="text" onChange={handleAnswerData2}/></label>
                 <label>Treść odpowiedzi 3<input id={'input'} className={'col-12 col-md-8 form-control add-input'} value={newAnswer3} name="answer" type="text" onChange={handleAnswerData3}/></label>
-                <label>Poprawna odpowiedz<select id={'input'} className={'col-12 col-md-8 form-control add-input'} value="" name="correct" onChange={handleCorrectData}>
-                        <option></option>
+                <label>Poprawna odpowiedz<select id={'input'} className={'col-12 col-md-8 form-control add-input'} name="correct" onChange={handleCorrectData}>
+                        <option />
                         <option>{newAnswer1}</option>
                         <option>{newAnswer2}</option>
                         <option>{newAnswer3}</option>
                 </select></label>
 
-                <button className={'mb-2 btn button align-self-center'}>Dodaj</button>
+                <button className={'mb-2 btn button align-self-center shadow'}>Dodaj</button>
                     {warning.length > 0 && <ul className={'p-1'}> {warning.map( (err, index) => <li id={'warning'} className=" container list-group-item list-group-item-warning " key={index}>
-                        <i className="fas fa-exclamation"></i>  {err}</li>)} </ul>}
+                        <i className="fas fa-exclamation" />  {err}</li>)} </ul>}
                 </div>
             </form>
 

@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useState} from "react";
+import React from "react";
 import {Header} from "./Header";
 import {Link} from "react-router-dom";
 
@@ -27,5 +27,3 @@ export const Home = () =>{
         </>
     )
 }
-
-// className={'mb-2 btn button align-self-center'}

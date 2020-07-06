@@ -1,24 +1,16 @@
 import React, {Component, useEffect, useState} from "react";
 import {Header} from "./Header";
 
-
-
-// localStorage.setItem('points', points)
-// localStorage.setItem('lenght', lenght)
-// localStorage.setItem("historyArray", JSON.stringify(historyArray[historyArray.length + 1]));
-
-
 const games = []
 
-
-export const QuizResult = ({points, lenght}) =>{
-    const [disabled, setDisabled] = useState(false)
+export const QuizResult = ({points, length}) =>{
+    const [disabledButton, setDisabledButton] = useState(false)
 
     const save = () => {
 
         const game = {
             pointsss: points,
-            lenghttt: lenght,
+            lenghttt: length,
             name: localStorage.getItem('userLogin')
         }
         localStorage.setItem("game", JSON.stringify(game));
@@ -30,15 +22,14 @@ export const QuizResult = ({points, lenght}) =>{
 
     const handleSave = () =>{
         save()
-        setDisabled(true)
+        setDisabledButton(true)
     }
-
 
     return (
         <>
             <Header />
-            <h1>{`Zdobyłeś ${points}/${lenght}`}</h1>
-            <button disabled={disabled} onClick={handleSave}>Zapisz</button>
+            <h1>{`Zdobyłeś ${points}/${length}`}</h1>
+            <button disabled={disabledButton} onClick={handleSave}>Zapisz</button>
         </>
     )
 }

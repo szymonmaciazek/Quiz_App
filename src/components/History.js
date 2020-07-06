@@ -1,7 +1,7 @@
 import React, {Component, useEffect, useState} from "react";
 import {Header} from "./Header";
 
-export const Historyy = () => {
+export const History = () => {
 
     let result = JSON.parse(localStorage.getItem('games'))
     console.log(result);
