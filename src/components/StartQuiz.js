@@ -57,7 +57,6 @@ export const StartQuiz = () =>{
             .then(data => {
                 setQuestion(data.items[quizData].question)
                 setAnswers(data.items[quizData].answers)
-
                 setCorrectValue(data.items[quizData].correct)
 
             })

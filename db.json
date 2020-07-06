@@ -54,6 +54,17 @@
         "Skośne"
       ],
       "correct": "Niskie"
+    },
+    {
+      "question": "wdp",
+      "subject_ID": 1,
+      "answers": [
+        "qwe",
+        "wd",
+        "1"
+      ],
+      "correct": "qwe",
+      "id": 6
     }
   ]
 }
